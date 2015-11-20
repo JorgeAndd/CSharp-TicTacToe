@@ -56,18 +56,33 @@ namespace JogoDaVelha
             
             txt.Text = game.getCurrentPlayer().ToString();
             var winner = game.markCell(index);
-            
-            if(winner != ' ') //Has winner
-            {
-                txtVencedor.Text = "O vencedor é o jogador " + winner;
-                hasWinner = true;
 
-				btnReplay.Visibility = Visibility.Visible;
+			switch(winner)
+			{
+				// No winner yet
+				case 0:
+					txtPlayer.Text = game.getCurrentPlayer().ToString();
+					return;
+				case 1:
+					txtVencedor.Text = "O vencedor é o jogador X";
+					hasWinner = true;
+
+					btnReplay.Visibility = Visibility.Visible;
+					return;
+				case 2:
+					txtVencedor.Text = "O vencedor é o jogador O";
+					hasWinner = true;
+
+					btnReplay.Visibility = Visibility.Visible;
+					return;
+				case 3:
+					txtVencedor.Text = "Empate!";
+					hasWinner = true;
+
+					btnReplay.Visibility = Visibility.Visible;
+					return;
 			}
-            else
-            {
-                txtPlayer.Text = game.getCurrentPlayer().ToString();
-            }
+
         }
 
 		private void btnReplay_Click(object sender, RoutedEventArgs e)
