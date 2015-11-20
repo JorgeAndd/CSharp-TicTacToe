@@ -10,8 +10,6 @@ namespace JogoDaVelha
     {
         private char[,] board;
         private char currentPlayer;
-        private bool hasWinner;
-        private char winner;
 
         public Game()
         {
@@ -20,7 +18,6 @@ namespace JogoDaVelha
                                     { ' ', ' ', ' '} };
 
             currentPlayer = 'X';
-            hasWinner = false;
         }
 
 		//Mark a cell at a given index with the current player symbol
@@ -29,7 +26,7 @@ namespace JogoDaVelha
 		// 1 if winner is player 1 (X)
 		// 2 if winner is player 2 (O)
 		// 3 if draw
-		public int markCell(int index)
+		public int MarkCell(int index)
         {
             int x = index % 3;
             int y = index / 3;
@@ -45,10 +42,10 @@ namespace JogoDaVelha
             else
                 currentPlayer = 'X';
 
-            return checkBoard();
+            return CheckBoard();
         }
 
-		public char getCurrentPlayer()
+		public char GetCurrentPlayer()
 		{
 			return currentPlayer;
 		}
@@ -59,7 +56,7 @@ namespace JogoDaVelha
 		// 1 if winner is player 1 (X)
 		// 2 if winner is player 2 (O)
 		// 3 if draw
-        public int checkBoard()
+        public int CheckBoard()
         {
 			char winner = ' ';
 
@@ -132,7 +129,6 @@ namespace JogoDaVelha
 									{ ' ', ' ', ' '} };
 
 			currentPlayer = 'X';
-			hasWinner = false;
 		}
     }
 }

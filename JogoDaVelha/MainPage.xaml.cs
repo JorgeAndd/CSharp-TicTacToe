@@ -54,14 +54,14 @@ namespace JogoDaVelha
             int index = name[name.Length - 1] - '0';
 
             
-            txt.Text = game.getCurrentPlayer().ToString();
-            var winner = game.markCell(index);
+            txt.Text = game.GetCurrentPlayer().ToString();
+            var winner = game.MarkCell(index);
 
 			switch(winner)
 			{
 				// No winner yet
 				case 0:
-					txtPlayer.Text = game.getCurrentPlayer().ToString();
+					txtPlayer.Text = game.GetCurrentPlayer().ToString();
 					return;
 				case 1:
 					txtVencedor.Text = "O vencedor é o jogador X";
