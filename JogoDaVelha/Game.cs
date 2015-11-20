@@ -28,6 +28,10 @@ namespace JogoDaVelha
             int x = index % 3;
             int y = index / 3;
 
+			//Check if cell is already marked
+			if (board[x, y] != ' ')
+				return ' ';
+
             board[x, y] = currentPlayer;
 
             if (currentPlayer == 'X')
@@ -45,37 +49,28 @@ namespace JogoDaVelha
 
         public char checkBoard()
         {
-            char winner = ' ';
 
-            // Check if some column has a winner
+            // Check if some column or line has a winner
             for (int i = 0; i < 3; i++)
             {
+				//Column check
                 if(board[i, 0] != ' ' 
                     && board[i, 0] == board[i,1]
                     && board[i, 0] == board[i, 2])
                 {
-                    winner = board[i, 0];
-                    break;
+                    return board[i, 0];
                 }
-            }
 
-            if (winner != ' ')
-                return winner;
 
-            // Check if some line has a winner
-            for (int i = 0; i < 3; i++)
-            {
-                if (board[0, i] != ' '
-                    && board[0, i] == board[1, i]
-                    && board[0, i] == board[2, i])
-                {
-                    winner = board[0, i];
-                    break;
-                }
-            }
+				//Line check
+				if (board[0, i] != ' '
+					&& board[0, i] == board[1, i]
+					&& board[0, i] == board[2, i])
+				{
+					return board[0, i];
+				}
+			}
 
-            if (winner != ' ')
-                return winner;
 
             //Check diagonals
             if( board[0, 0] != ' '
@@ -89,7 +84,7 @@ namespace JogoDaVelha
                 && board[0, 2] == board[1, 1]
                 && board[0, 2] == board[2, 0])
             {
-                return board[0, 0];
+                return board[0, 2];
             }
 
             return ' ';

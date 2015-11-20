@@ -44,11 +44,16 @@ namespace JogoDaVelha
                 return;
 
             var cell = (Grid)sender;
+			var txt = cell.Children.OfType<TextBlock>().FirstOrDefault();
 
-            var name = cell.Name;
+			//Check if cell is already marked
+			if (txt.Text != "")
+				return;
+
+			var name = cell.Name;
             int index = name[name.Length - 1] - '0';
 
-            var txt = cell.Children.OfType<TextBlock>().FirstOrDefault();
+            
             txt.Text = game.getCurrentPlayer().ToString();
             var winner = game.markCell(index);
             
@@ -61,8 +66,6 @@ namespace JogoDaVelha
             {
                 txtPlayer.Text = game.getCurrentPlayer().ToString();
             }
-
-
         }
     }
 }
