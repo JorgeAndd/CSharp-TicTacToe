@@ -89,5 +89,15 @@ namespace JogoDaVelha
 
             return ' ';
         }
+
+		public void Restart()
+		{
+			board = new char[,] {   { ' ', ' ', ' '},
+									{ ' ', ' ', ' '},
+									{ ' ', ' ', ' '} };
+
+			currentPlayer = 'X';
+			hasWinner = false;
+		}
     }
 }

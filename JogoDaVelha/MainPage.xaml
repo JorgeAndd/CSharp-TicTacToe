@@ -13,7 +13,12 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0" x:Name="Board" HorizontalAlignment="Center" Height="100" Margin="10,137,0,0" VerticalAlignment="Top" Width="100" BorderBrush="Black" BorderThickness="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="121*"/>
+            <RowDefinition Height="199*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0" x:Name="Board" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" BorderBrush="Black" BorderThickness="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -73,11 +78,13 @@
 
         </Grid>
 
-        <StackPanel Grid.Column="1" Margin="0,121,0,-121">
+        <StackPanel Grid.Column="1" Margin="0,0,0,0" VerticalAlignment="Center">
             <TextBlock Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Jogador atual" VerticalAlignment="Top"/>
             <TextBlock x:Name="txtPlayer" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="62"/>
             <GridView x:Name="gridView" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100"/>
-            <TextBlock x:Name="txtVencedor" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+            <TextBlock x:Name="txtVencedor" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <Button x:Name="btnReplay" Margin="10, 20, 0, 10" HorizontalAlignment="Stretch" Height="30" 
+                Content="Jogar novamente" Click="btnReplay_Click" Visibility="Collapsed"/>
         </StackPanel>
 
     </Grid>

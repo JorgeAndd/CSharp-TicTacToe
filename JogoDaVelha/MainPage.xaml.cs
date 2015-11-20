@@ -61,11 +61,29 @@ namespace JogoDaVelha
             {
                 txtVencedor.Text = "O vencedor é o jogador " + winner;
                 hasWinner = true;
-            }
+
+				btnReplay.Visibility = Visibility.Visible;
+			}
             else
             {
                 txtPlayer.Text = game.getCurrentPlayer().ToString();
             }
         }
-    }
+
+		private void btnReplay_Click(object sender, RoutedEventArgs e)
+		{
+			//Clear each cell on the grid
+			foreach(Grid cell in Board.Children.OfType<Grid>())
+			{
+				var txt = cell.Children.OfType<TextBlock>().FirstOrDefault();
+
+				txt.Text = "";
+			}
+
+			txtVencedor.Text = "";
+			hasWinner = false;
+			game.Restart();
+			btnReplay.Visibility = Visibility.Collapsed;
+		}
+	}
 }
