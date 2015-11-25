@@ -8,17 +8,16 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="121*"/>
-            <RowDefinition Height="199*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="400*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Column="0" x:Name="Board" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" BorderBrush="Black" BorderThickness="0">
+        <TextBlock Grid.Row="0" Text="Jogo da Velha" Style="{StaticResource HeaderTextBlockStyle}"/>
+        
+        <Grid Grid.Row="2" x:Name="Board" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="Black" BorderThickness="0" Margin="50,50,50,50">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -31,61 +30,74 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Grid x:Name="cell0" Grid.Column="0" Grid.Row="0" PointerPressed="Cell_PointerPressed">
-                <Rectangle Stroke="Black" Fill="White"/>
-                <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+            <Grid x:Name="cell0" Grid.Column="0" Grid.Row="0" PointerPressed="Cell_PointerPressed" Margin="5,5,5,5">
+                <Rectangle Stroke="Black" Fill="{StaticResource SystemControlBackgroundAccentBrush}"/>
+                <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="150" Foreground="{ThemeResource AppBarBackgroundThemeBrush}"/>
             </Grid>
 
-            <Grid x:Name="cell1" Grid.Column="1" Grid.Row="0" PointerPressed="Cell_PointerPressed">
-                <Rectangle Stroke="Black" Fill="White"/>
-                <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+            <Grid x:Name="cell1" Grid.Column="1" Grid.Row="0" PointerPressed="Cell_PointerPressed" Margin="5,5,5,5">
+                <Rectangle Stroke="Black" Fill="{StaticResource SystemControlBackgroundAccentBrush}"/>
+                <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="150" Foreground="{ThemeResource AppBarBackgroundThemeBrush}"/>
             </Grid>
 
-            <Grid x:Name="cell2" Grid.Column="2" Grid.Row="0" PointerPressed="Cell_PointerPressed">
-                <Rectangle Stroke="Black" Fill="White"/>
-                <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+            <Grid x:Name="cell2" Grid.Column="2" Grid.Row="0" PointerPressed="Cell_PointerPressed" Margin="5,5,5,5">
+                <Rectangle Stroke="Black" Fill="{StaticResource SystemControlBackgroundAccentBrush}"/>
+                <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="150" Foreground="{ThemeResource AppBarBackgroundThemeBrush}"/>
             </Grid>
 
-            <Grid x:Name="cell3" Grid.Column="0" Grid.Row="1" PointerPressed="Cell_PointerPressed">
-                <Rectangle Stroke="Black" Fill="White"/>
-                <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+            <Grid x:Name="cell3" Grid.Column="0" Grid.Row="1" PointerPressed="Cell_PointerPressed" Margin="5,5,5,5">
+                <Rectangle Stroke="Black" Fill="{StaticResource SystemControlBackgroundAccentBrush}"/>
+                <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="150" Foreground="{ThemeResource AppBarBackgroundThemeBrush}"/>
             </Grid>
 
-            <Grid x:Name="cell4" Grid.Column="1" Grid.Row="1" PointerPressed="Cell_PointerPressed">
-                <Rectangle Stroke="Black" Fill="White"/>
-                <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+            <Grid x:Name="cell4" Grid.Column="1" Grid.Row="1" PointerPressed="Cell_PointerPressed" Margin="5,5,5,5">
+                <Rectangle Stroke="Black" Fill="{StaticResource SystemControlBackgroundAccentBrush}"/>
+                <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="150" Foreground="{ThemeResource AppBarBackgroundThemeBrush}"/>
             </Grid>
 
-            <Grid x:Name="cell5" Grid.Column="2" Grid.Row="1" PointerPressed="Cell_PointerPressed">
-                <Rectangle Stroke="Black" Fill="White"/>
-                <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+            <Grid x:Name="cell5" Grid.Column="2" Grid.Row="1" PointerPressed="Cell_PointerPressed" Margin="5,5,5,5">
+                <Rectangle Stroke="Black" Fill="{StaticResource SystemControlBackgroundAccentBrush}"/>
+                <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="150" Foreground="{ThemeResource AppBarBackgroundThemeBrush}"/>
             </Grid>
 
-            <Grid x:Name="cell6" Grid.Column="0" Grid.Row="2" PointerPressed="Cell_PointerPressed">
-                <Rectangle Stroke="Black" Fill="White"/>
-                <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+            <Grid x:Name="cell6" Grid.Column="0" Grid.Row="2" PointerPressed="Cell_PointerPressed" Margin="5,5,5,5">
+                <Rectangle Stroke="Black" Fill="{StaticResource SystemControlBackgroundAccentBrush}"/>
+                <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="150" Foreground="{ThemeResource AppBarBackgroundThemeBrush}"/>
             </Grid>
 
-            <Grid x:Name="cell7" Grid.Column="1" Grid.Row="2" PointerPressed="Cell_PointerPressed">
-                <Rectangle Stroke="Black" Fill="White"/>
-                <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+            <Grid x:Name="cell7" Grid.Column="1" Grid.Row="2" PointerPressed="Cell_PointerPressed" Margin="5,5,5,5">
+                <Rectangle Stroke="Black" Fill="{StaticResource SystemControlBackgroundAccentBrush}"/>
+                <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="150" Foreground="{ThemeResource AppBarBackgroundThemeBrush}"/>
             </Grid>
 
-            <Grid x:Name="cell8" Grid.Column="2" Grid.Row="2" PointerPressed="Cell_PointerPressed">
-                <Rectangle Stroke="Black" Fill="White"/>
-                <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+            <Grid x:Name="cell8" Grid.Column="2" Grid.Row="2" PointerPressed="Cell_PointerPressed" Margin="5,5,5,5">
+                <Rectangle Stroke="Black" Fill="{StaticResource SystemControlBackgroundAccentBrush}"/>
+                <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="150" Foreground="{ThemeResource AppBarBackgroundThemeBrush}"/>
             </Grid>
 
         </Grid>
 
-        <StackPanel Grid.Column="1" Margin="0,0,50,0" VerticalAlignment="Center">
-            <TextBlock Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Jogador atual" VerticalAlignment="Top"/>
-            <TextBlock x:Name="txtPlayer" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="62"/>
-            <GridView x:Name="gridView" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100"/>
-            <TextBlock x:Name="txtVencedor" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"/>
-            <Button x:Name="btnReplay" Margin="30, 20, 0, 30" HorizontalAlignment="Stretch" Height="35" 
-                Content="Jogar novamente" Click="btnReplay_Click" Visibility="Collapsed"/>
-        </StackPanel>
+        <Grid Grid.Row="1" Margin="20, 0, 20, 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <TextBlock Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Jogador atual" VerticalAlignment="Top" Style="{StaticResource TitleTextBlockStyle}"/>
+                <TextBlock x:Name="txtPlayer" HorizontalAlignment="Center" Text="X" VerticalAlignment="Top" Style="{StaticResource TitleTextBlockStyle}"/>
+                
+                <Button x:Name="btnReplay" Margin="15,20,0,15" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                Content="Reiniciar Jogo" Click="btnReplay_Click" Style="{StaticResource PivotTitleContentControlStyle}"/>
+            </StackPanel>
+
+            <TextBlock Grid.Column="1" x:Name="txtVencedor" Text="" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Style="{StaticResource SubheaderTextBlockStyle}"/>
+
+
+        </Grid>
+        
+
 
     </Grid>
 </Page>

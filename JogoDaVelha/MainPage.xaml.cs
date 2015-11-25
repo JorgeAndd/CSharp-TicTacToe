@@ -67,19 +67,19 @@ namespace JogoDaVelha
 					txtVencedor.Text = "O vencedor é o jogador X";
 					hasWinner = true;
 
-					btnReplay.Visibility = Visibility.Visible;
+					btnReplay.Content = "Jogar Novamente";
 					return;
 				case 2:
 					txtVencedor.Text = "O vencedor é o jogador O";
 					hasWinner = true;
 
-					btnReplay.Visibility = Visibility.Visible;
+					btnReplay.Content = "Jogar Novamente";
 					return;
 				case 3:
 					txtVencedor.Text = "Empate!";
 					hasWinner = true;
 
-					btnReplay.Visibility = Visibility.Visible;
+					btnReplay.Content = "Jogar Novamente";
 					return;
 			}
 
@@ -98,7 +98,7 @@ namespace JogoDaVelha
 			txtVencedor.Text = "";
 			hasWinner = false;
 			game.Restart();
-			btnReplay.Visibility = Visibility.Collapsed;
+			btnReplay.Content = "Reiniciar Jogo";
 		}
 	}
 }
